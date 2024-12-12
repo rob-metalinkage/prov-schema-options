@@ -1,0 +1,11 @@
+Error generating transformed file:
+Traceback (most recent call last):
+  File "/src/ogc/bblocks/transform.py", line 95, in apply_transforms
+    transform_result = transformer.transform(transform_metadata)
+  File "/src/ogc/bblocks/models.py", line 621, in transform
+    return self.do_transform(metadata)
+  File "/src/ogc/bblocks/transformers/xslt.py", line 24, in do_transform
+    transform = etree.XSLT(etree.XML(metadata.transform_content.encode('utf-8')))
+  File "src/lxml/xslt.pxi", line 409, in lxml.etree.XSLT.__init__
+  File "src/lxml/etree.pyx", line 332, in lxml.etree._ExceptionContext._raise_if_stored
+lxml.etree.XSLTParseError: Cannot resolve URI string://__STRING__XSLT__/mapping/DQ.xsl

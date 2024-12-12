@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.bbr.template.19115-dcat - 19115 XSL test",
+  "bblockName": "19115 XSL test",
+  "bblockId": "ogc.bbr.template.19115-dcat",
+  "generated": "2024-12-12T03:41:24.673448+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

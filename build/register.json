@@ -2,7 +2,7 @@
   "name": "My OGC Building Blocks repository",
   "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
   "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
-  "modified": "2024-12-11T22:38:36.435887",
+  "modified": "2024-12-12T03:41:24.456436",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"4f836104f60184d3a6e2f2272208584d6cae081d",
@@ -20,118 +20,75 @@
   ],
   "bblocks": [
     {
-      "itemIdentifier": "ogc.bbr.template.mySchema",
-      "$schema": "metaschema.yaml",
-      "name": "My Schema",
-      "abstract": "An example schema defining the set of properties of any type of object.",
+      "itemIdentifier": "ogc.bbr.template.19115-dcat",
+      "name": "19115 XSL test",
+      "abstract": "A sample building block to test XSLT for 19115",
       "status": "under-development",
-      "dateTimeAddition": "2023-04-05T00:00:00Z",
+      "dateTimeAddition": "2024-10-03T11:31:00+02:00",
       "itemClass": "schema",
-      "register": "ogc-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2024-12-11",
-      "link": "https://github.com/opengeospatial/bblock-template",
-      "sources": [
-        {
-          "title": "Sample source document",
-          "link": "https://example.com/sources/1"
-        }
-      ],
-      "maturity": "mature",
-      "scope": "unstable",
-      "tags": [
-        "templates"
-      ],
-      "shaclRules": {
-        "ogc.bbr.template.mySchema": [
-          "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/rules.shacl"
-        ]
-      },
-      "ldContext": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/mySchema/context.jsonld",
-      "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/mySchema/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/mySchema/schema.json"
-      },
-      "sourceSchema": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/schema.yaml",
-      "sourceLdContext": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/context.jsonld",
-      "sourceFiles": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/",
+      "dateOfLastChange": "2024-12-12",
+      "shaclRules": {},
+      "sourceFiles": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/19115-dcat/",
       "rdfData": [
         "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/data.ttl"
       ],
       "validationPassed": true,
-      "testOutputs": "https://github.com/rob-metalinkage/prov-schema-options/blob/master/build/tests/bbr/template/mySchema/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/markdown/bbr/template/mySchema/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/json-full/bbr/template/mySchema/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/bblock/ogc.bbr.template.mySchema"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.bbr.template.myFeature",
-      "name": "Custom Feature",
-      "abstract": "This examples shows a simple customisation for OGC API Feature schemas",
-      "status": "under-development",
-      "dateTimeAddition": "2023-05-19T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ogc-building-block-examples",
-      "version": "1.0",
-      "dateOfLastChange": "2024-12-11",
-      "sources": [
+      "transforms": [
         {
-          "title": "OGC API - Features, Part 1, 7.16.2: Feature Response",
-          "link": "https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7"
+          "id": "to-xslt",
+          "description": "This transform applies some changes to input XML to demonstrate XSLT transforms",
+          "type": "xslt",
+          "ref": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/19115-dcat/transforms/fromISO19139.xsl",
+          "code": "<xsl:stylesheet version=\"2.0\"\n                xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\n                xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n                xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n                xmlns:gmd=\"http://www.isotc211.org/2005/gmd\"\n                xmlns:gcoold=\"http://www.isotc211.org/2005/gco\"\n                xmlns:gmi=\"http://www.isotc211.org/2005/gmi\"\n                xmlns:gmx=\"http://www.isotc211.org/2005/gmx\"\n                xmlns:gsr=\"http://www.isotc211.org/2005/gsr\"\n                xmlns:gss=\"http://www.isotc211.org/2005/gss\"\n                xmlns:gts=\"http://www.isotc211.org/2005/gts\"\n                xmlns:srvold=\"http://www.isotc211.org/2005/srv\"\n                xmlns:gml30=\"http://www.opengis.net/gml\"\n                xmlns:cat=\"http://standards.iso.org/iso/19115/-3/cat/1.0\"\n                xmlns:cit=\"http://standards.iso.org/iso/19115/-3/cit/2.0\"\n                xmlns:gcx=\"http://standards.iso.org/iso/19115/-3/gcx/1.0\"\n                xmlns:gex=\"http://standards.iso.org/iso/19115/-3/gex/1.0\"\n                xmlns:lan=\"http://standards.iso.org/iso/19115/-3/lan/1.0\"\n                xmlns:srv=\"http://standards.iso.org/iso/19115/-3/srv/2.1\"\n                xmlns:mac=\"http://standards.iso.org/iso/19115/-3/mac/2.0\"\n                xmlns:mas=\"http://standards.iso.org/iso/19115/-3/mas/1.0\"\n                xmlns:mcc=\"http://standards.iso.org/iso/19115/-3/mcc/1.0\"\n                xmlns:mco=\"http://standards.iso.org/iso/19115/-3/mco/1.0\"\n                xmlns:mda=\"http://standards.iso.org/iso/19115/-3/mda/1.0\"\n                xmlns:mdb=\"http://standards.iso.org/iso/19115/-3/mdb/2.0\"\n                xmlns:mdt=\"http://standards.iso.org/iso/19115/-3/mdt/1.0\"\n                xmlns:mex=\"http://standards.iso.org/iso/19115/-3/mex/1.0\"\n                xmlns:mic=\"http://standards.iso.org/iso/19115/-3/mic/1.0\"\n                xmlns:mil=\"http://standards.iso.org/iso/19115/-3/mil/1.0\"\n                xmlns:mrl=\"http://standards.iso.org/iso/19115/-3/mrl/1.0\"\n                xmlns:mds=\"http://standards.iso.org/iso/19115/-3/mds/2.0\"\n                xmlns:mmi=\"http://standards.iso.org/iso/19115/-3/mmi/1.0\"\n                xmlns:mpc=\"http://standards.iso.org/iso/19115/-3/mpc/1.0\"\n                xmlns:mrc=\"http://standards.iso.org/iso/19115/-3/mrc/1.0\"\n                xmlns:mrd=\"http://standards.iso.org/iso/19115/-3/mrd/1.0\"\n                xmlns:mri=\"http://standards.iso.org/iso/19115/-3/mri/1.0\"\n                xmlns:mrs=\"http://standards.iso.org/iso/19115/-3/mrs/1.0\"\n                xmlns:msr=\"http://standards.iso.org/iso/19115/-3/msr/2.0\"\n                xmlns:mai=\"http://standards.iso.org/iso/19115/-3/mai/1.0\"\n                xmlns:mdq=\"http://standards.iso.org/iso/19157/-2/mdq/1.0\"\n                xmlns:gco=\"http://standards.iso.org/iso/19115/-3/gco/1.0\"\n                xmlns:gml=\"http://www.opengis.net/gml/3.2\"\n                xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n                xmlns:xd=\"http://www.oxygenxml.com/ns/doc/xsl\"\n                exclude-result-prefixes=\"#all\">\n\n    <xsl:import href=\"utility/create19115-3Namespaces.xsl\"/>\n    <xsl:import href=\"utility/dateTime.xsl\"/>\n    <xsl:import href=\"utility/multiLingualCharacterStrings.xsl\"/>\n\n    <xd:doc xmlns:xd=\"http://www.oxygenxml.com/ns/doc/xsl\" scope=\"stylesheet\">\n        <xd:desc>\n            <xd:p>\n                <xd:b>Created on:</xd:b>March 8, 2014 </xd:p>\n            <xd:p>Translates from ISO 19139 for ISO 19115 and ISO 19139-2 for 19115-2 to ISO 19139-1 for ISO 19115-1</xd:p>\n            <xd:p>\n                <xd:b>Version June 13, 2014</xd:b>\n                <xd:ul>\n                    <xd:li>Converged the 19115-2 transform into 19115-1 namespaces</xd:li>\n                </xd:ul>\n            </xd:p>\n            <xd:p>\n                <xd:b>Version August 7, 2014</xd:b>\n                <xd:ul>\n                    <xd:li>Changed namespace dates to 2014-07-11</xd:li>\n                    <xd:li>Fixed DistributedComputingPlatform element</xd:li>\n                </xd:ul>\n            </xd:p>\n            <xd:p>\n                <xd:b>Version August 15, 2014</xd:b>\n                <xd:ul>\n                    <xd:li>Add multilingual metadata support by converting gmd:locale and copying gmd:PT_FreeText and element attributes (eg. gco:nilReason, xsi:type) for gmd:CharacterString elements (Author:\n                        fx.prunayre@gmail.com).</xd:li>\n                </xd:ul>\n            </xd:p>\n            <xd:p>\n                <xd:b>Version September 4, 2014</xd:b>\n                <xd:ul>\n                    <xd:li>Added transform for MD_FeatureCatalogueDescription (problem identified by Tobias Spears</xd:li>\n                </xd:ul>\n            </xd:p>\n            <xd:p>\n                <xd:b>Version February 5, 2015</xd:b>\n                <xd:ul>\n                    <xd:li>Update to 2014-12-25 version</xd:li>\n                </xd:ul>\n            </xd:p>\n            <xd:p><xd:b>Author:</xd:b>thabermann@hdfgroup.org</xd:p>\n        </xd:desc>\n    </xd:doc>\n\n    <xsl:output method=\"xml\" indent=\"yes\"/>\n\n    <xsl:strip-space elements=\"*\"/>\n\n    <xsl:variable name=\"stylesheetVersion\" select=\"'0.1'\"/>\n\n\n    <xsl:template match=\"/\">\n        <!--\n        root element (MD_Metadata or MI_Metadata)\n        -->\n        <xsl:for-each select=\"//(gmd:MD_Metadata|gmi:MI_Metadata)\">\n            <xsl:variable name=\"nameSpacePrefix\">\n                <xsl:call-template name=\"getNamespacePrefix\"/>\n            </xsl:variable>\n\n            <xsl:element name=\"mdb:MD_Metadata\">\n                <!-- new namespaces -->\n                <xsl:call-template name=\"add-iso19115-3.2018-namespaces\"/>\n\n                <xsl:apply-templates select=\"gmd:fileIdentifier\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:language\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:characterSet\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:parentIdentifier\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:hierarchyLevel\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:contact\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:dateStamp\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:metadataStandardName\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:locale\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:spatialRepresentationInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:referenceSystemInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:metadataExtensionInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:identificationInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:contentInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:call-template name=\"onlineSourceDispatcher\">\n                    <xsl:with-param name=\"type\" select=\"'featureCatalogueCitation'\"/>\n                </xsl:call-template>\n\n                <xsl:apply-templates select=\"gmd:distributionInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:dataQualityInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:portrayalCatalogueInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:call-template name=\"onlineSourceDispatcher\">\n                    <xsl:with-param name=\"type\" select=\"'portrayalCatalogueCitation'\"/>\n                </xsl:call-template>\n\n                <xsl:apply-templates select=\"gmd:metadataConstraints\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:applicationSchemaInfo\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmd:metadataMaintenance\" mode=\"from19139to19115-3.2018\"/>\n                <xsl:apply-templates select=\"gmi:acquisitionInformation\" mode=\"from19139to19115-3.2018\"/>\n            </xsl:element>\n        </xsl:for-each>\n    </xsl:template>\n\n\n    <xsl:include href=\"mapping/core.xsl\"/>\n    <xsl:include href=\"mapping/CI_ResponsibleParty.xsl\"/>\n    <xsl:include href=\"mapping/CI_Citation.xsl\"/>\n    <xsl:include href=\"mapping/SRV.xsl\"/>\n    <xsl:include href=\"mapping/DQ.xsl\"/>\n\n\n\n    <!-- Depending on the function of online source in ISO19139,\n    categorized them in more descriptive sections. -->\n    <xsl:variable name=\"onlineFunctionMap\">\n        <entry key=\"portrayalCatalogueCitation\" value=\"information.portrayal\"/>\n        <entry key=\"additionalDocumentation\" ns=\"mrl\" value=\"information.lineage\" type=\"dq\"/>\n        <entry key=\"specification\" value=\"information.qualitySpecification\" type=\"dq\"/>\n        <entry key=\"reportReference\" value=\"information.qualityReport\" type=\"dq\"/>\n        <entry key=\"featureCatalogueCitation\" value=\"information.content\"/>\n    </xsl:variable>\n\n    <xsl:template match=\"gmd:onLine[*/gmd:function/*/@codeListValue = $onlineFunctionMap/entry/@value]\"\n                  mode=\"from19139to19115-3.2018\"\n                  priority=\"200\"/>\n\n    <xsl:template name=\"onlineSourceDispatcher\">\n        <xsl:param name=\"type\" as=\"xs:string\"/>\n\n        <xsl:for-each select=\"(.|ancestor::gmd:MD_Metadata)/descendant::gmd:CI_OnlineResource[\n                    gmd:function/*/@codeListValue = $onlineFunctionMap/entry[@key = $type]/@value\n                    ]\">\n            <!-- Convert onlineSource to a citation in the corresponding element. -->\n            <xsl:choose>\n                <xsl:when test=\"$type = 'portrayalCatalogueCitation'\">\n                    <mdb:portrayalCatalogueInfo>\n                        <mpc:MD_PortrayalCatalogueReference>\n                            <mpc:portrayalCatalogueCitation>\n                                <xsl:call-template name=\"buildCitation\"/>\n                            </mpc:portrayalCatalogueCitation>\n                        </mpc:MD_PortrayalCatalogueReference>\n                    </mdb:portrayalCatalogueInfo>\n                </xsl:when>\n                <xsl:when test=\"$type = 'featureCatalogueCitation'\">\n                    <mdb:contentInfo>\n                        <mrc:MD_FeatureCatalogueDescription>\n                            <mrc:featureCatalogueCitation>\n                                <xsl:call-template name=\"buildCitation\"/>\n                            </mrc:featureCatalogueCitation>\n                        </mrc:MD_FeatureCatalogueDescription>\n                    </mdb:contentInfo>\n                </xsl:when>\n                <xsl:when test=\"$type = 'specification'\">\n                    <mdq:report>\n                        <mdq:DQ_DomainConsistency>\n                            <mdq:result>\n                                <mdq:DQ_ConformanceResult>\n                                    <mdq:specification>\n                                        <xsl:call-template name=\"buildCitation\">\n                                            <xsl:with-param name=\"withDescription\" select=\"false()\"/>\n                                        </xsl:call-template>\n                                    </mdq:specification>\n\n                                    <xsl:call-template name=\"writeCharacterStringElement\">\n                                        <xsl:with-param name=\"elementName\" select=\"'mdq:explanation'\"/>\n                                        <xsl:with-param name=\"nodeWithStringToWrite\" select=\"gmd:description\"/>\n                                    </xsl:call-template>\n\n                                    <mdq:pass>\n                                        <gco:Boolean>true</gco:Boolean>\n                                    </mdq:pass>\n                                </mdq:DQ_ConformanceResult>\n                            </mdq:result>\n                        </mdq:DQ_DomainConsistency>\n                    </mdq:report>\n                </xsl:when>\n                <xsl:when test=\"$type = 'reportReference'\">\n                    <mdq:standaloneQualityReport>\n                        <mdq:DQ_StandaloneQualityReportInformation>\n                            <mdq:reportReference>\n                                <xsl:call-template name=\"buildCitation\">\n                                    <xsl:with-param name=\"withDescription\" select=\"false()\"/>\n                                </xsl:call-template>\n                            </mdq:reportReference>\n\n                            <xsl:call-template name=\"writeCharacterStringElement\">\n                                <xsl:with-param name=\"elementName\" select=\"'mdq:abstract'\"/>\n                                <xsl:with-param name=\"nodeWithStringToWrite\" select=\"gmd:description\"/>\n                            </xsl:call-template>\n\n                        </mdq:DQ_StandaloneQualityReportInformation>\n                    </mdq:standaloneQualityReport>\n                </xsl:when>\n                <xsl:when test=\"$type = 'additionalDocumentation'\">\n                    <xsl:element name=\"{concat($onlineFunctionMap/entry[@key = $type]/@ns, ':', $type)}\">\n                        <xsl:call-template name=\"buildCitation\"/>\n                    </xsl:element>\n                </xsl:when>\n                <xsl:otherwise>\n                    <xsl:message>Unsupported type: <xsl:value-of select=\"$type\"/></xsl:message>\n                </xsl:otherwise>\n            </xsl:choose>\n\n        </xsl:for-each>\n    </xsl:template>\n\n    <xsl:template name=\"buildCitation\">\n        <xsl:param name=\"withDescription\" select=\"true()\"/>\n        <cit:CI_Citation>\n            <xsl:call-template name=\"writeCharacterStringElement\">\n                <xsl:with-param name=\"elementName\" select=\"'cit:title'\"/>\n                <xsl:with-param name=\"nodeWithStringToWrite\" select=\"gmd:name\"/>\n            </xsl:call-template>\n\n            <cit:onlineResource>\n                <cit:CI_OnlineResource>\n                    <xsl:apply-templates select=\"gmd:linkage\"\n                                         mode=\"from19139to19115-3.2018\"/>\n                    <xsl:apply-templates select=\"gmd:protocol\"\n                                         mode=\"from19139to19115-3.2018\"/>\n                    <xsl:apply-templates select=\"gmd:applicationProfile\"\n                                         mode=\"from19139to19115-3.2018\"/>\n\n                    <xsl:if test=\"$withDescription\">\n                        <xsl:call-template name=\"writeCharacterStringElement\">\n                            <xsl:with-param name=\"elementName\" select=\"'cit:description'\"/>\n                            <xsl:with-param name=\"nodeWithStringToWrite\" select=\"gmd:description\"/>\n                        </xsl:call-template>\n                    </xsl:if>\n\n                    <xsl:apply-templates select=\"gmd:function\"\n                                         mode=\"from19139to19115-3.2018\"/>\n                </cit:CI_OnlineResource>\n            </cit:onlineResource>\n        </cit:CI_Citation>\n    </xsl:template>\n</xsl:stylesheet>\n",
+          "inputs": {
+            "mediaTypes": [
+              {
+                "id": "xml",
+                "defaultExtension": "xml",
+                "label": "XML",
+                "mimeType": "application/xml",
+                "aliases": [
+                  "application/xml",
+                  "text/xml"
+                ],
+                "extensions": [
+                  "xml"
+                ]
+              }
+            ]
+          },
+          "outputs": {
+            "mediaTypes": [
+              {
+                "id": "xml",
+                "defaultExtension": "xml",
+                "label": "XML",
+                "mimeType": "application/xml",
+                "aliases": [
+                  "application/xml",
+                  "text/xml"
+                ],
+                "extensions": [
+                  "xml"
+                ]
+              }
+            ]
+          }
         }
       ],
-      "maturity": "development",
-      "scope": "unstable",
-      "dependsOn": [
-        "ogc.geo.features.feature",
-        "ogc.bbr.template.mySchema"
-      ],
-      "tags": [
-        "feature",
-        "examples"
-      ],
-      "group": "Examples",
-      "highlighted": true,
-      "shaclRules": {
-        "ogc.bbr.template.mySchema": [
-          "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/rules.shacl"
-        ]
-      },
-      "schema": {
-        "application/yaml": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/myFeature/schema.yaml",
-        "application/json": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/myFeature/schema.json"
-      },
-      "sourceSchema": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/myFeature/schema.yaml",
-      "ldContext": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/myFeature/context.jsonld",
-      "sourceFiles": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/myFeature/",
-      "rdfData": [
-        "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/data.ttl"
-      ],
-      "validationPassed": true,
-      "testOutputs": "https://github.com/rob-metalinkage/prov-schema-options/blob/master/build/tests/bbr/template/myFeature/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/markdown/bbr/template/myFeature/index.md"
+          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/markdown/bbr/template/19115-dcat/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/json-full/bbr/template/myFeature/index.json"
+          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/json-full/bbr/template/19115-dcat/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/bblock/ogc.bbr.template.myFeature"
+          "url": "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/bblock/ogc.bbr.template.19115-dcat"
         }
       }
     }

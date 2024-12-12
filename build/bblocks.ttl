@@ -7,60 +7,21 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/ogc.bbr.template.myFeature> a skos:Concept,
+<https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/ogc.bbr.template.19115-dcat> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
-    rdfs:label "Custom Feature" ;
-    dct:abstract "This examples shows a simple customisation for OGC API Feature schemas" ;
-    dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/bblock/ogc.bbr.template.myFeature" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/json-full/bbr/template/myFeature/index.json" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/markdown/bbr/template/myFeature/index.md" ] ;
-    dct:hasVersion "1.0" ;
-    dct:modified "2024-12-11"^^xsd:date ;
-    dct:source <https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> ;
-    skos:inScheme <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/> ;
-    dcat:keyword "examples",
-        "feature" ;
-    bblocks:dependsOn <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/ogc.bbr.template.mySchema>,
-        <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/ogc.geo.features.feature> ;
-    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/myFeature/context.jsonld> ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/myFeature/schema.json>,
-        <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/myFeature/schema.yaml> ;
-    bblocks:hasShaclRule <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/rules.shacl> ;
-    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
-
-<https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> rdfs:label "OGC API - Features, Part 1, 7.16.2: Feature Response" .
-
-<https://example.com/sources/1> rdfs:label "Sample source document" .
-
-<https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/ogc.bbr.template.mySchema> a skos:Concept,
-        dcat:Dataset,
-        bblocks:Schema ;
-    rdfs:label "My Schema" ;
-    dct:abstract "An example schema defining the set of properties of any type of object." ;
-    dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
+    rdfs:label "19115 XSL test" ;
+    dct:abstract "A sample building block to test XSLT for 19115" ;
+    dct:created "2024-10-03T11:31:00+02:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/json-full/bbr/template/mySchema/index.json" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/bblock/ogc.bbr.template.mySchema" ],
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/json-full/bbr/template/19115-dcat/index.json" ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/markdown/bbr/template/mySchema/index.md" ] ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/generateddocs/markdown/bbr/template/19115-dcat/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/bblock/ogc.bbr.template.19115-dcat" ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2024-12-11"^^xsd:date ;
-    dct:source <https://example.com/sources/1> ;
+    dct:modified "2024-12-12"^^xsd:date ;
     skos:inScheme <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/> ;
-    dcat:keyword "templates" ;
-    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/mySchema/context.jsonld> ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/mySchema/schema.json>,
-        <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/annotated/bbr/template/mySchema/schema.yaml> ;
-    bblocks:hasShaclRule <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/rules.shacl> ;
-    bblocks:hasSourceJsonLdContext <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/_sources/mySchema/context.jsonld> ;
-    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> .
 
 <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/> a skos:ConceptScheme,
@@ -77,11 +38,11 @@ including [links](https://google.es).
     bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2024-12-11T22:38:37.642551"^^xsd:dateTime ;
-    prov:startedAtTime "2024-12-11T22:38:37.573669"^^xsd:dateTime ;
+    prov:endedAtTime "2024-12-12T03:41:24.777814"^^xsd:dateTime ;
+    prov:startedAtTime "2024-12-12T03:41:24.706164"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
             dct:format "application/json" ;
-            dct:hasVersion "git:7fda73a2d538bfa653957dfa3a378caa18bd3d44" ;
+            dct:hasVersion "git:697ad55934d5bb86eb2565e6da1e74ed295721b9" ;
             rdfs:seeAlso <https://raw.githubusercontent.com/rob-metalinkage/prov-schema-options/undefined/build/register.json> ],
         [ a prov:Entity ;
             dct:format "application/yaml" ;
