@@ -1,0 +1,9 @@
+{
+  "name": "19115 XSL test",
+  "abstract": "A sample building block to test XSLT for 19115",
+  "status": "under-development",
+  "dateTimeAddition": "2024-10-03T11:31:00+02:00",
+  "itemClass": "schema",
+  "version": "0.1",
+  "dateOfLastChange": "2024-10-03"
+}

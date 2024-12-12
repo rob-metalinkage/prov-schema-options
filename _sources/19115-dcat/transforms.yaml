@@ -1,0 +1,5 @@
+transforms:
+  - id: to-xslt
+    description: This transform applies some changes to input XML to demonstrate XSLT transforms
+    type: xslt
+    ref: transforms/fromISO19139.xsl

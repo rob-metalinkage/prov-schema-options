@@ -1,0 +1,5 @@
+examples:
+  - title: ANZ Metlite template for 19115 XML record.
+    snippets:
+      - language: xml
+        ref: examples/iso19115-ANZ-template.xml
